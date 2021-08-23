@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https:/resources/demos/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/date_time.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body onload="initClock()">
+    <header id="header">
+        <a href="index.html"><img id="logo" src="images/svg.2.png" alt=""></a>
+        <nav id="nav">
+            <button id="btn-mobile">Menu
+                <span id="hamburguer"></span>
+            </button>
+            <ul id="menu">
+                <li><a href="index.html">INÍCIO</a></li>
+                <li><a href="quem-somos.html">QUEM SOMOS</a></li>
+                <li><a href="formulario.html">FORMULÁRIO</a></li>
+                <li><a href="atualizacao.html">ATUALIZAÇÃO</a></li>
+            </ul>
+            
+    </header>
+    <div id="aumenta_letra">
+        <input type="button" class="botaoFonte" value="A+" id="btn-acessibilidade-aumenta" onclick="acessibilidadeAumenta()">
+        <input type="button" class="botaoFonte" value="A-" id="btn-acessibilidade-diminui" onclick="acessibilidadeDiminui()">
+    </div> 
+    <main class="main-formulario paginaPrincipal">
+        <button id="btn-dark-mode">ON/OFF</button>
+        <div id="page-title-div">
+            <h1>Formulário de Vacinação</h1>
+        </div>
+        <div class="form-wrapper">
+            <form action="" class="form">
+                <div class="form-group progress-div">
+                    <div id="texto-progress-div">
+                        <p>Progresso do preenchimento de dados</p>
+                    </div>
+                    <div id="progressbar"></div>
+                    <div id="hidden-submit-div">
+                        <p>Todos os dados preenchidos!</p>
+                        <p id="fase-vac"></p>
+                        <input type="button" value="Enviar">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="nome">Nome completo</label>
+                    <input id="nome" class="form-input" type="text" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="idade">Idade</label>
+                    <input id="idade" class="form-input" type="text" oninput="salvaIdade()" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="cpf">CPF</label>
+                    <input id="cpf" class="form-input" type="text" oninput="validarCPF()"
+                        placeholder="         formato: 123.456.789-10" />
+                </div>
+                <div class="form-group select">
+                    <label class="form-label" for="profissao">Profissão</label>
+                    <select name="profissao" id="profissao">
+                        <option value="ni">Não informado</option>
+                        <option value="professor">Professor</option>
+                        <option value="saude">Profissional da área de saúde</option>
+                        <option value="seguranca">Profissional das forças de segurança</option>
+                        <option value="serv-pub">Servidor Público</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group" id="hidden-outros">
+                    <input id="profissao-outros" class="form-input" type="text" placeholder="Qual sua profissão?" />
+                </div>
+                <div class="form-group select">
+                    <label class="form-label" for="etnia">Etnia</label>
+                    <select name="etnia" id="etnia">
+                        <option value="ni">Não informado</option>
+                        <option value="branco">Cor branca</option>
+                        <option value="preto">Cor preta</option>
+                        <option value="pardo">Cor parda</option>
+                        <option value="amarelo">Cor amarela</option>
+                        <option value="indigena">Indígena</option>
+                    </select>
+                </div>
+                <div class="form-group select">
+                    <label class="form-label" for="sexo">Sexo</label>
+                    <select name="sexo" id="sexo">
+                        <option value="ni">Não informado</option>
+                        <option value="masc">Masculino</option>
+                        <option value="fem">Feminino</option>
+                    </select>
+                </div>
+                <div class="form-group select" id="hidden-gestante">
+                    <label class="form-label" for="gestante">Gestante?</label>
+                    <select name="gestante" id="gestante">
+                        <option value="nao">Não</option>
+                        <option value="sim">Sim</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="sus">Cartão SUS</label>
+                    <input id="sus" class="form-input" type="text" />
+                </div>
+                <div class="form-group checkboxes-group">
+                    <p class="checkbox-title">Vacinas que já possui</p>
+                    <input type="checkbox" id="tuberculose" name="tuberculose">
+                    <label for="tuberculose">Tuberculose (BCG)</label>
+                    <input type="checkbox" id="poliomielite" name="poliomielite">
+                    <label for="poliomielite">Poliomielite ou Paralisia Infantil (VOP)</label> <br>
+                    <input type="checkbox" id="hepatiteb" name="hepatiteb">
+                    <label for="hepatiteb">Hepatite B</label>
+                    <input type="checkbox" id="duplaviral" name="duplaviral">
+                    <label for="duplaviral">Sarampo e Rubéola (Dupla Viral - SR)</label> <br>
+                    <input type="checkbox" id="febreamarela" name="febreamarela">
+                    <label for="febreamarela">Febre Amarela</label>
+                    <input type="checkbox" id="difteria-tetano" name="difteria-tetano">
+                    <label for="difteria-tetano">Difteria e Tétano</label>
+                    <input type="checkbox" id="gripe" name="gripe">
+                    <label for="gripe">Gripe (Influenza)</label>
+                </div>
+                <div class="form-group select">
+                    <label class="form-label" for="comorbidade">Comorbidade</label>
+                    <select name="sexo" id="comorbidade">
+                        <option value="ni">Não informado</option>
+                        <option value="asma">Asma</option>
+                        <option value="bronquite">Bronquite</option>
+                        <option value="cardiopatia">Cardiopatia</option>
+                        <option value="diabetes">Diabetes</option>
+                        <option value="lim-motora">Limitação motora</option>
+                        <option value="obesidade">Obesidade</option>
+                        <option value="pressao-alta">Pressão alta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="altura">Altura</label>
+                    <input id="altura" class="form-input" type="text" placeholder="              formato: 1.75" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="peso">Peso</label>
+                    <input id="peso" class="form-input" type="text" placeholder="           somente números (kg)" />
+                </div>
+                <div class="form-group">
+                    <input type="button" value="Calcular IMC" id="calc-imc-btn">
+                    <p id="result-imc"></p>
+                </div>
+            </form>
+        </div>
+        <span id="scroll-top-btn"><img src="images/up-arrow.png" alt=""></span>
+        <div class="datetime">
+            <div class="date">
+                <span id="dayname">Day</span>,
+                <span id="month">Month</span>
+                <span id="daynum">00</span>,
+                <span id="year">Year</span>
+            </div>
+            <div class="time">
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+    
+        </div>
+    </main>
+    <footer>
+        <section>
+            <h2>Nos acompanhe nas redes sociais</h2>
+        </section>
+        <section id="social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+
+        </section>
+        <section id="desenvolvimento">
+            <p>© Prefeitura Silicon Valley - 2021. Todos os direitos reservados</p>
+        </section>
+
+    </footer>
+
+    <script src="js/formulario.js"></script>
+    <script src="./js/tam_letra_acessib.js"></script>
+    
+    <script>
+        const btnMobile = document.getElementById("btn-mobile");
+
+        function toggleMenu() {
+            const nav = document.getElementById("nav");
+            nav.classList.toggle("active");
+        }
+
+        btnMobile.addEventListener("click", toggleMenu);
+
+    </script>
+    <script src="js/date_clock.js"></script>
+</body>
+
+</html>
+

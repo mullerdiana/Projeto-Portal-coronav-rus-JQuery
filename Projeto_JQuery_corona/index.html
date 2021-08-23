@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https:/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/index.js"></script>
+    
+    <link rel="stylesheet" href="css/acorddion.css">
+    <link rel="stylesheet" href="css/date_time.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/geral.css">
+    <title> Prefeitura Municipal de Silicon Valley</title>
+    <script>
+        $(document).ready(function () {
+
+            // Utilização do accordion
+            $("#accordion").accordion();
+            $("#tabs").tabs();
+            //menu mobile
+
+            const btnMobile = document.getElementById("btn-mobile");
+
+            // TOGGLE //
+
+            function toggleMenu() {
+                const nav = document.getElementById("nav");
+
+                // utilização toggle
+                nav.classList.toggle("active");
+            }
+
+            btnMobile.addEventListener("click", toggleMenu);
+
+
+            //Botao scroll
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 200) {
+                    $("#scroll-top-btn").css({ "display": "block" });
+                }
+                else {
+                    $("#scroll-top-btn").css({ "display": "none" });
+                }
+            })
+
+            $("#scroll-top-btn").click(function () {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                return false;
+            })
+
+        });
+
+    </script>
+    <link rel="stylesheet" href="acorddion.css">
+
+</head>
+
+<body onload="initClock()">
+    <header id="header">
+        <a href="index.html"><img id="logo" src="images/svg.2.png" alt=""></a>
+        <nav id="nav">
+            <button id="btn-mobile">Menu
+                <span id="hamburguer"></span>
+            </button>
+            <ul id="menu">
+                <li><a href="#">INÍCIO</a></li>
+                <li><a href="quem-somos.html">QUEM SOMOS</a></li>
+                <li><a href="formulario.html">FORMULÁRIO</a></li>
+                <li><a href="atualizacao.html">ATUALIZAÇÃO</a></li>
+            </ul>
+
+    </header>
+    <main class="paginaPrincipal">
+        <section id="banner">
+            <!-- acessibilidade -->
+            <section> 
+                <div id="aumenta_letra">
+                    <input type="button" class="botaoFonte" value="A+" id="btn-acessibilidade-aumenta" onclick="acessibilidadeAumenta()">
+                    <input type="button" class="botaoFonte" value="A-" id="btn-acessibilidade-diminui" onclick="acessibilidadeDiminui()">
+                </div>
+                <button id="btn-dark-mode">ON/OFF</button>
+            </section>
+            <section id="img-banner">
+                <p id="bv">Bem-vindo a </p>
+                <p id="sv">Silicon Valley</p>
+            </section>
+        </section>
+
+        <section class="conteudo_vacinas">
+            <!-- widget accordion - jquery ui -->
+            <div id="accordion">
+                <h3>Comirnaty (Pfizer/Wyeth)</h3>
+                <div id="accordion1">
+                    <p>
+                        Tecnologia - RNA mensageiro
+                    </p>
+                    <p>
+                        Eficácia de 95% após a segunda dose.
+                        O imunizante da farmacêutica Pfizer em parceria com o laboratório BioNTech se baseia na
+                        tecnologia de RNA mensageiro, ou mRNA. O RNA mensageiro sintético dá as instruções ao organismo
+                        para a produção de proteínas encontradas na superfície do novo coronavírus, que estimulam a
+                        resposta do sistema imune.<br>
+                        Fonte: https://butantan.gov.br/
+                    </p>
+                </div>
+                <h3>Coronavac (Butantan)</h3>
+                <div>
+                    <p>
+                        Tecnologia - Vírus inativado.
+                    </p>
+                    <p>
+                        A eficácia global pode chegar a 62,3% se o intervalo entre as duas doses for igual ou superior a
+                        21 dias. Nos casos que requerem assistência médica a eficácia pode variar entre 83,7% e 100%.
+                        A vacina do Butantan utiliza a tecnologia de vírus inativado (morto), uma técnica consolidada há
+                        anos e amplamente estudada. Ao ser injetado no organismo, esse vírus não é capaz de causar
+                        doença, mas induz uma resposta imunológica. Os ensaios clínicos da CoronaVac no Brasil foram
+                        realizados exclusivamente com profissionais da saúde, ou seja, pessoas com alta exposição ao
+                        vírus. <br>
+                        Fonte: https://butantan.gov.br/
+                    </p>
+                </div>
+                <h3>Janssen Vaccine (Janssen-Cilag)</h3>
+                <div>
+                    <p>
+                        Tecnologia - Vetor viral
+                    </p>
+                    <p>
+                        Eficácia de 66,9% para casos leves e moderados, e 76,7% contra casos graves 14 dias após a
+                        aplicação.
+                        Do grupo Johnson & Johnson, a vacina do laboratório Janssen é aplicada em apenas uma dose, mas
+                        ainda não está disponível no Brasil. Assim como o imunizante da Astrazeneca, também se utiliza
+                        da tecnologia de vetor viral, baseado em um tipo específico de adenovírus que foi geneticamente
+                        modificado para não se replicar em humanos.
+                        <br>
+                        Fonte: https://butantan.gov.br/
+                    </p>
+                </div>
+                <h3>Oxford/Covishield (Fiocruz e Astrazeneca)</h3>
+                <div>
+                    <p>
+                        Tecnologia - Vetor viral
+                    </p>
+                    <p>
+                        Eficácia de 76% após a primeira dose e 81% após a segunda.
+                        Foi desenvolvida pela farmacêutica AstraZeneca em parceria com a universidade de Oxford. No Brasil, é produzida pela Fundação Oswaldo Cruz (Fiocruz). A tecnologia empregada é o uso do chamado vetor viral. O adenovírus, que infecta chimpanzés, é manipulado geneticamente para que seja inserido o gene da proteína “Spike” (proteína “S”) do Sars-CoV-2. <br>
+                        Fonte: https://butantan.gov.br/
+                    </p>
+                </div>
+            </div>
+            <div id="conteudo-direita">
+                <section class="protocolos">
+                    <img id="img-protocolos" src="images/soap.png" alt="">
+                    <a class="section-links" href="#vai_protocolos">Protocolos de combate adotados de acordo com a OMS</a>
+                </section>
+                <section class="medicamentos">
+                    <img src="images/vacina.png" alt="">
+                    <a class="section-links" href="#vai_medicamentos">Potenciais técnicas de tratamento e/ou novos medicamentos</a>
+                </section>
+            </div>
+        </section>
+        <section id="vai_protocolos" class="sectionProtocolos">
+            <h2>Protocolos de Combate adotados de acordo com a OMS</h2>
+            <div id="subProtocolos">
+                <!-- widgets tabs - jquery ui -->
+                <img src="images/Prevent epidemic rebound-pana.png" alt="">
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Higienização</a></li>
+                        <li><a href="#tabs-2">Distância</a></li>
+                        <li><a href="#tabs-3">Uso de máscara</a></li>
+                        <li><a href="#tabs-4">Viajantes</a></li>
+
+                    </ul>
+                    <div id="tabs-1">
+                        <p>
+                            Lave as mãos com água e sabão ou higienizador à base de álcool para matar vírus que podem
+                            estar nas suas mãos.
+                        </p>
+                        <p>
+                            Evite tocar nos olhos, nariz e boca. As mãos tocam muitas superfícies e podem ser infectadas
+                            por vírus. Uma vez contaminadas, as mãos podem transferir o vírus para os olhos, nariz ou
+                            boca. A partir daí, o vírus pode entrar no corpo da pessoa e deixá-la doente.
+                        </p>
+                    </div>
+                    <div id="tabs-2">
+                        <p>
+                            Mantenha pelo menos 1 metro de distância entre você e qualquer pessoa que esteja tossindo ou
+                            espirrando. Quando alguém tosse ou espirra, pulveriza pequenas gotas líquidas do nariz ou da
+                            boca, que podem conter vírus. Se você estiver muito próximo, poderá inspirar as gotículas –
+                            inclusive do vírus da COVID-19 se a pessoa que tossir tiver a doença.
+                        </p>
+                    </div>
+                    <div id="tabs-3">
+                        <p>
+                            Certifique-se de que você e as pessoas ao seu redor seguem uma boa higiene respiratória.
+                            Isso significa cobrir a boca e o nariz com a parte interna do cotovelo ou lenço quando
+                            tossir ou espirrar (em seguida, descarte o lenço usado imediatamente).
+                        <p>
+                            Gotículas espalham vírus. Ao seguir uma boa higiene respiratória, você protege as pessoas ao
+                            seu redor contra vírus responsáveis por resfriado, gripe e COVID-19.</p>
+                        </p>
+                        <p>
+                    </div>
+                    <div id="tabs-4">
+                        <p>
+                            Pessoas doentes devem adiar ou evitar viajar para as áreas afetadas por coronavírus. Áreas
+                            afetadas são países, áreas, províncias ou cidades onde há transmissão contínua – não áreas
+                            com apenas casos importados.
+                        </p>
+                        <p>
+                            Os viajantes que retornam das áreas afetadas devem monitorar seus sintomas por 14 dias e
+                            seguir os protocolos nacionais dos países receptores; e se ocorrerem sintomas, devem entrar
+                            em contato com um médico e informar sobre o histórico de viagem e os sintomas.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="vai_medicamentos" class="sectionMedicamentos">
+            <h2>Potenciais técnicas de tratamento e/ou novos medicamentos</h2>
+            <section id="sectionMedicamentos2">
+                <div id="alerta_medicamentos">
+                    <img id="alerta" src="images/alerta.png" alt="">
+                    <p id="text1">
+                        Atenção! Apesar de entre março e maio deste ano, a Anvisa (Agência Nacional de Vigilância
+                        Sanitária) ter autorizado, de forma emergencial, os três primeiros medicamentos para uso em
+                        pacientes com covid-19, A OMS (Organização Mundial da Saúde) não está convencida dos benefícios
+                        e não apoia seus usos contra Covid-19. Mas para fins de informaçãoAs drogas são o antiviral
+                        remdesivir, da Gilead Sciences, e duas associações de anticorpos monoclonais, o Regen-Cov, da
+                        Regeneron e da Roche, e o coquetel banlanivimabe e etesevimabe, da Eli Lilly. Elas são de alto
+                        custo e têm indicação bastante limitada e precisa, sempre em pacientes com mais de 12 anos e
+                        acima dos 40 quilos que apresentam risco de se tornarem casos graves. Não se trata de remédios
+                        universais, com capacidade de controlar a pandemia ou serem empregados como tratamento
+                        preventivo da covid.
+                    </p>
+                    <p id="text2"> - Revista Pesquisa Fapesp 05/06/2021 10h22.</p>
+                </div>
+                <img class="imgMedicamentos" src="images/Fighting against Coronavirus-cuate.png" alt="">
+            </section>
+        </section>
+        <section class="containerSlide">
+            <div class="img-slider">
+                <div class="slide active">
+                    <img src="./images/banner-1.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./images/banner2.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./images/banner 3.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./images/banner4.jpg" alt="">
+                </div>
+                <div class="navigation">
+                    <div class="btn active"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+
+                </div>
+            </div>
+        </section>
+        <span id="scroll-top-btn"><img src="images/up-arrow.png" alt=""></span>
+        <div class="datetime">
+            <div class="date">
+                <span id="dayname">Day</span>,
+                <span id="month">Month</span>
+                <span id="daynum">00</span>,
+                <span id="year">Year</span>
+            </div>
+            <div class="time">
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+    
+        </div>
+    </main>
+
+
+    <footer>
+        <section>
+            <h2>Nos acompanhe nas redes sociais</h2>
+        </section>
+        <section id="social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+
+        </section>
+        <section id="desenvolvimento">
+            <p>© Prefeitura Silicon Valley - 2021. Todos os direitos reservados</p>
+        </section>
+
+      
+    </footer>
+    <script>
+        var slides = document.querySelectorAll('.slide')
+        var btns = document.querySelectorAll('.btn');
+        let currentSlide = 1;
+
+        //Script para navegação manual das imagens
+        var manualNav = function (manual) {
+
+            slides.forEach((slide) => {
+                slide.classList.remove('active')
+            })
+
+            btns.forEach((btn) => {
+                btn.classList.remove('active')
+            })
+
+
+            slides[manual].classList.add('active')
+            btns[manual].classList.add('active')
+        }
+        btns.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                manualNav(i);
+                currentSlide = i;
+            })
+
+        })
+
+        //Script para navegação automática
+        var repeticao = function (activeClass) {
+            let active = document.getElementsByClassName('active');
+            let i = 1;
+
+            var repetindo = () => {
+                setTimeout(function () {
+                    [...active].forEach((activeSlide) => {
+                        activeSlide.classList.remove('active')
+                    })
+
+                    slides[i].classList.add('active')
+                    btns[i].classList.add('active')
+                    i++;
+
+                    if (slides.length == i) {
+                        i = 0;
+                    }
+
+                    if (i >= slides.length) {
+                        return;
+                    }
+                    repetindo();
+
+                }, 5000);
+            }
+            repetindo();
+        }
+        repeticao();
+    </script>
+    <script src="./js/tam_letra_acessib.js"></script>
+    <script src="js/date_clock.js"></script>
+    
+   
+</body>
+
+</html>
+
+
+
+
+ <!-- Alessandra Murat, Amanda NAscimento, Diana Muller, João Valdevino, Márcia Alves e Rafael Pontes -->

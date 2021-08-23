@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
+.main-formulario { 
+    background-color: #f5f5f5;
+    padding-bottom: 50px;
+}
+  
+.form-wrapper {
+    max-width: 35%;
+    min-width: 300px;
+    padding: 40px 30px 40px 30px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+}
+  
+.form-group {
+    position:relative;
+}
+
+.form-group + .form-group {
+    margin-top: 20px;
+}
+  
+.form-label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: #999;
+    background-color: #fff;
+    z-index: 10;
+    transition: transform 150ms ease-out, font-size 150ms ease-out;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+  
+.focused .form-label {
+    transform: translateY(-125%);
+    font-size: .75em;
+}
+  
+.form-input {
+    position: relative;
+    padding: 12px 0px 5px 0;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    box-shadow: 0 1px 0 0 #e5e5e5;
+    transition: box-shadow 150ms ease-out;
+}
+
+.form-input:focus {
+    box-shadow: 0 2px 0 0 blue;
+}
+  
+.form-input.filled {
+    box-shadow: 0 2px 0 0 lightgreen;
+}
+
+.form-input.wrong {
+    box-shadow: 0 2px 0 0 lightcoral;
+}
+
+/*  */
+
+#etnia, #sexo, #gestante, #comorbidade, #profissao{
+    margin-top: 30px;
+}
+
+#hidden-gestante {
+    display: none;
+}
+
+#hidden-outros {
+    display: none;
+}
+
+#result-imc {
+    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: #595959;
+}
+
+#page-title-div {
+    padding-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#page-title-div h1 {
+    font-size: 4rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+.checkbox-title {
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.checkboxes-group {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #595959;
+}
+
+.progress-div {
+    position: sticky;
+    top: 0;
+    z-index: 11;
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+#texto-progress-div {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Lato', sans-serif;
+    color: #595959;
+}
+
+#hidden-submit-div {
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    color: #595959;
+    padding-bottom: 10px;
+}
+
+#hidden-submit-div p {
+    margin-bottom: 10px;
+}
+
+/* Botão scroll */
+
+#scroll-top-btn {
+    margin-right: 30px;
+    margin-bottom: 75px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: none;
+    z-index: 2;
+    
+}
+
+#scroll-top-btn img {
+    height: 50px;
+}
+
+
+/* barra de progresso */
+
+#progressbar > div {
+    background-color: #26c281;
+}
+
+/* dark mode */
+
+#btn-dark-mode {
+    position: fixed;
+    right: 30px;
+    top: 80px;
+    z-index: 10;
+    display: block;
+    width: 70px;
+    height: 30px;
+    border-radius: 16px;
+    background: #222;
+    color:white;
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: inset 0  4px 10px rgba(0, 0, 0, 0.1),
+            inset 0  2px 2px rgba(0, 0, 0, 0.1),
+}
+
+.dark-mode-darkest {
+    background-color: #181818;
+    color: white;
+}
+
+.dark-mode-dark {
+    background-color: #212121;
+    color: white;
+}
+
+.dark-mode-boxshadow {
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+}

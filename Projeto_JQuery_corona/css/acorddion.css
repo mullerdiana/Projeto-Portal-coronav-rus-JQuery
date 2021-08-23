@@ -1,0 +1,22 @@
+#accordion  {
+    width: 550px;
+    border-radius: 50px;
+}
+#accordion h3 {
+    font-weight: bold;
+    color: white;
+    background-color: #005377;
+}
+
+#accordion p {
+    padding-bottom: 10px;
+}
+
+
+@media (max-width: 620px) {
+    #accordion{
+        width: 480px;
+    
+    }
+
+}

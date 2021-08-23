@@ -1,0 +1,539 @@
+body{
+    font-family: "Raleway","Open Sans",Helvetica,Arial,sans-serif;
+}
+/* modo noturno */
+
+td, tr, th {
+    background-color: white;
+    padding-top: 3px;
+    line-height: 1.5rem;
+}
+th{
+    font-size: 1.2em
+}
+#tabela_criterios th:nth-child(3){
+    background-color: rgb(219, 40, 40);
+}
+#tabela_criterios th:nth-child(4){
+    background-color: rgb(255, 136, 0);
+}
+#tabela_criterios th:nth-child(5){
+    background-color: rgb(204, 204, 13);
+}
+#tabela_criterios th:nth-child(6){
+    background-color: rgb(27, 131, 27);
+}
+.criterio1{
+    background-color: #ff6961;
+}
+.criterio2{
+    background-color: rgb(233, 148, 78);
+}
+.criterio3{
+    background-color: rgb(223, 223, 114);
+}
+.criterio4{
+    background-color: rgb(92, 145, 92);
+}
+
+
+/* Formatação Section 1: Banner */
+
+#banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#banner img {
+    width: 99.8%;
+}
+
+/* media query */
+
+@media only screen and (min-width: 700px) {
+
+#banner h1 {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 5%;
+    padding-bottom: 10px;
+    z-index: 1;
+    text-align: center;
+}
+
+#banner h2 {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 11%;
+    text-align: center;
+    padding-top: 10px;
+    z-index: 2;font-weight: 500;
+}
+}
+
+@media screen and (max-width: 699px) {
+    #banner h1 {
+        font-size: 1.5rem;
+        position: absolute;
+        top: 2%;
+        padding-bottom: 10px;
+        z-index: 1;
+    }
+    
+    #banner h2 {
+        font-size: 1rem;
+        position: absolute;
+        top: 11%;
+        padding-top: 3px;
+        z-index: 2;
+    }
+  }
+
+/* Section 2: Ocupação */
+.ocupacao {
+    background-color: #EFF2F1;;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 80px;
+    padding-top: 80px;
+    padding-bottom: 80px; 
+}
+
+.ocupacao section {
+    width: 28vw;
+}
+
+.ocupacao_uti, .casos {
+    border: none;
+    box-shadow: 3px 3px 3px grey;
+    border: solid 1px #adacb5;
+}
+
+
+#leitos{
+    display: flex;
+}
+    
+.ocupacao section h2 {
+    background-color: #052f5f;
+    color: rgb(238, 238, 238);
+}
+
+.ocupacao button{
+    padding: 10px;
+    box-shadow: 2px 2px 2px grey;
+    font-weight: bold;
+}
+
+.num_leitos{
+padding-left: 15px;
+}
+
+.ocupacao{
+    font-family: "Raleway","Open Sans",Helvetica,Arial,sans-serif;
+    font-size: 1.2em;
+    background-color:#EFF2F1;
+}
+
+.ocupacao_uti h2, .ocupacao_uti h3, .casos h2,  .casos div{
+    padding: 10px;
+}
+
+.casos h3 {
+    padding-left: 0;
+}
+
+button {
+    border-radius: 50px;
+    margin: 10px;
+    position:relative;
+    left: 37%;
+
+}
+
+#btn_enviar i{
+    transition:5s
+}
+
+#btn_enviar:hover{
+    background: #5BC0BE;
+    border: 1px solid rgb(31, 58, 150);
+    color: #052F5F;
+}
+
+.inputs{
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 40%;
+    position:relative;
+}
+
+.inputs input{
+    padding-top: 4px;
+    left: 0;
+}
+
+/* outro media query */
+
+@media screen and (max-width: 699px) {
+
+.ocupacao {
+    padding: 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.ocupacao section {
+    width: 80vw;
+    padding-bottom: 8px;
+}
+
+.ocupacao section h2 {
+    background-color: #052f5f;
+    font-size: 20px;
+}
+
+.ocupacao section h3, label {
+    font-size: 16px;
+}
+
+.ocupacao_uti, .casos {
+    border: none;
+    box-shadow: 3px 3px 3px grey;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs input{
+    padding-top: 4px;
+    left: 0;
+}
+
+h3 { 
+    font-size: 16px;}
+}
+
+h2 { 
+    font-size: 20px;
+}
+
+/* Formatação Section 3: Retorna fase de alerta */
+
+.fases_alerta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #5BC0BE;
+}
+
+.frase_alerta {
+    padding-top: 100px;
+    text-align: center;
+    width: 400px;
+}
+
+.frase_alerta h2 {
+    padding-top: 5%;
+    font-family: "Raleway","Open Sans",Helvetica,Arial,sans-serif;
+}
+
+.frase_alerta h3 {
+    text-align: justify;
+    padding-top: 20px;
+    padding: 27px;
+    font-weight: 500;
+    font-family: "Raleway","Open Sans",Helvetica,Arial,sans-serif;
+}
+
+#fase_criterios {
+    padding: 30px;
+    width: 800px;
+}
+
+#fase_criterios table {
+    background-color: #005377;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+/* .volta_center  {
+    text-align: center;
+} */
+
+#fase_criterios td:nth-child(1), td:nth-child(2) {
+    text-align: left;
+}
+
+td,th {
+    padding: 10px;
+    /* background-color: #EFF2F1; */
+}
+th{
+    border-bottom: solid 2px black; 
+}
+.borda_divisoria{
+    border-top: solid 2px black;
+}
+.canto_superior_esquerdo {
+    border-top-left-radius: 10px;
+}
+.canto_superior_direito {
+    border-top-right-radius: 10px;
+}
+
+.canto_inferior_esquerdo {
+
+    border-bottom-left-radius: 10px;
+}
+.canto_inferior_direito {
+
+    border-bottom-right-radius: 10px;
+}
+
+
+
+ /* Formatação Section 4: Grafico */
+
+ .section_grafico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    background-color: #d8d5db;
+ }
+
+ #section_grafico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    background-color: #d8d5db;
+ }
+
+ .section_grafico h2 {
+    /* color: #07161d; */
+    font-size: 23px;
+    padding-top: 30px;
+ }
+
+.section_grafico img{
+    width: 68vw;
+}
+
+/* Formatação Section 5: Retorna abertura de setores */
+.fase_setores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#5BC0BE;
+}
+
+.fase_setores h3 {
+    font-size: 2rem;
+    padding-top: 40px;
+    text-align: center;
+    color: white;
+    background-color: #005377;
+    font-family: "Raleway","Open Sans",Helvetica,Arial,sans-serif;
+}
+
+.fase_setores h4 {
+    font-size: 1.2rem;
+    padding-top: 3px;
+    padding-bottom: 17px;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    background-color: #005377;
+    font-family: "Raleway","Open Sans",Helvetica,Arial,sans-serif;
+}
+
+#tabela_setores {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+table {
+    font-family: "Raleway","Open Sans",Helvetica,Arial,sans-serif;
+}
+
+#tabela_setores table {
+
+    background-color: #7a918d;
+    border-radius: 20px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 5px 5px 5px grey;
+}
+
+#tabela_setores td, th {
+
+    padding: 2px;
+    
+}
+
+table img {
+    width: 40px;
+    height: 30px
+}
+
+#scroll-top-btn {
+    margin-right: 30px;
+    margin-bottom: 75px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: none;
+    z-index: 2;
+    
+}
+
+#scroll-top-btn img {
+    height: 50px;
+}
+
+/* dark mode - rafa */
+/* cores 
+    verde escuro: #183E3E
+    preto: #181818
+    preto mais claro: #212121
+    cinza escuro: #3D3D3D
+    cinza claro: #AAAAAA
+*/
+#btn-dark-mode {
+    position: fixed;
+    left: 1430px;
+    /* right: 10px; */
+    top: 70px;
+    z-index: 10;
+    display: block;
+    width: 70px;
+    height: 30px;
+    border-radius: 16px;
+    background: #222;
+    color:white;
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: inset 0  4px 10px rgba(0, 0, 0, 0.1),
+            inset 0  2px 2px rgba(0, 0, 0, 0.1),
+}
+
+.dark-mode-green {
+    background-color: #143333;
+}
+
+.dark-mode-darkest {
+    background-color: #181818;
+    color: white;
+}
+
+.dark-mode-dark {
+    background-color: #212121;
+    color: white;
+}
+
+.dark-mode-white-font {
+    color: white;
+}
+
+.dark-mode-boxshadow {
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+}
+
+/* .tabela-fundo-branco {
+    background-color: #EFF2F1;
+} */
+
+/* Início do footer  */
+
+#social {
+    background-color: #005377;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 15px;
+    
+}
+
+#social a {
+    display: inline-flex;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border: solid 1px rgb(255, 254, 254);
+    padding: 15px;
+    margin: 0 15px;
+    font-size: 25px;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    align-items: center;
+    border-radius: 15px;
+    transition: 0.2s;
+}
+
+footer h2 {
+    color: white;
+    padding-top: 15px;
+    display:inline-flex;
+    text-align: center;
+    font-size: 25px;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 10px;
+    background-color: #005377;
+    font-family: "Raleway","Open Sans",Helvetica,Arial,sans-serif;
+  
+}
+
+footer #desenvolvimento p {
+    color: white;
+    background-color: #052F5F;
+    display:flex;
+    text-align: center;
+    font-size: 1rem;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    text-transform: uppercase;
+    font-family: "Raleway","Open Sans",Helvetica,Arial,sans-serif;
+}
+
+#social a i {
+    transition:1s;
+}
+
+#social a:hover {
+    transform: scale(1.1);
+    background: #E8EDDF;
+    border: 1px solid white;
+    color: #052F5F;
+    
+}
+
+
+#social a i:hover {
+    transform: rotate(15deg) scale(1);
+}
+
+/* div acessibilidade */
+/* 
+#aumenta_letra {
+    position: fixed;
+    right: 0;
+    margin-right: 100px;
+    z-index: 10;
+} */

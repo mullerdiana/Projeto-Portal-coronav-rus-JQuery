@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/geral.css">
+    <link rel="stylesheet" href="./css/atualizacao.css"> 
+    <link rel="stylesheet" href="css/date_time.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+        
+        <script>//menu mobile
+            $(document).ready(function () {                
+                const btnMobile = document.getElementById("btn-mobile");
+                function toggleMenu() {
+                    const nav = document.getElementById("nav");
+                    nav.classList.toggle("active");
+                }
+                btnMobile.addEventListener("click", toggleMenu);
+
+                
+            });
+
+    
+        </script>    
+    <title>Silicon Valley</title>
+    
+</head>
+<body id="body" onload="initClock()">
+    <header id="header">
+        <a href="index.html"><img id="logo" src="images/svg.2.png" alt=""></a>
+        <nav id="nav">
+            <button id="btn-mobile">Menu
+                <span id="hamburguer"></span>
+            </button>
+            <ul id="menu">
+                <li><a href="index.html">INÍCIO</a></li>
+                <li><a href="quem-somos.html">QUEM SOMOS</a></li>
+                <li><a href="formulario.html">FORMULÁRIO</a></li>
+                <li><a href="atualizacao.html">ATUALIZAÇÃO</a></li>
+            </ul>
+    </header>
+
+    <main class="main-atualizacao">
+        <section>
+        <div id="aumenta_letra">
+            <input type="button" class="botaoFonte" value="A+" id="btn-acessibilidade-aumenta" onclick="acessibilidadeAumenta()">
+            <input type="button" class="botaoFonte" value="A-" id="btn-acessibilidade-diminui" onclick="acessibilidadeDiminui()">
+        </div>
+        <button id="btn-dark-mode">ON/OFF</button>
+        </section>
+        
+        <!--Section 1: Banner-->
+        <section id="banner">
+            <img src="images/teste_banner.jpg" alt="Banner">
+            <h1>CORONAVÍRUS</h1>
+            <h2>Estamos em alerta máximo</h2>
+        </section>
+
+
+        <!--Section 2: Painel Saúde-->
+            <section class="ocupacao">
+                <section class="ocupacao_uti">
+                    <h2>Leitos</h2>
+                    <div id="leitos">
+                        <div>
+                            <h3>leitos UTI adulto</h3>
+                            <div class="num_leitos">702</div>
+                            <h3>leitos enfermaria</h3>
+                            <div class="num_leitos">30</div>
+                        </div>
+                        <div class="inputs">
+                            <label for="input_uti">leitos UTI ocupados: <br></label>
+                            <input type="text" name="input_uti" id="input_uti" placeholder="Ex: 10">
+                            <br>
+                            <label for="input_enfermaria">leitos enfermaria ocupados: <br></label>
+                            <input type="text" name="input_enfermaria" id="input_enfermaria" placeholder="Ex: 10">
+                        </div>
+                    </div>
+                    <button id="btn_enviar">Enviar dados</button>
+                </section>
+
+                <section id="fantasma">
+                    <div><span id="mostra_ocupacao_uti"></span></div>
+                   <div><span id="mostra_ocupacao_enfermaria"></span></div>
+                   <div><span id="informa_ocupacao"></span></div>
+                </section>
+
+                <section class="casos">
+                    <h2>Casos de COVID-19</h2>
+                    <div>
+                        <h3>confirmados</h3>
+                        <div>100.231</div>
+                        <h3>recuperados</h3>
+                        <div>97.657</div>
+                    </div>
+                </section>
+            </section>
+
+        <!--Section 3: Retorna fase de alerta-->
+        <section class="fases_alerta">
+
+            <section class="frase_alerta">
+                <h2 style="font-size: 1.5em; font-weight: bold; line-height: 1.2em;">Critérios da classificação em fases</h2>
+                <h3 style="font-size: 1.2em; text-indent: 1.2em; line-height: 1.5em;">Para garantir o acesso aos serviços à saúde, evitando o colapso do nosso sistema, iremos adotar o sistema de fases conforme os critérios a seguir.</h3>
+            </section>
+
+            <section id="fase_criterios">
+                <table id="tabela_criterios">
+                    <tr>
+                        <th class="canto_superior_esquerdo tabela-fundo-branco">Critério</th>
+                        <th class="tabela-fundo-branco">Indicador</th>
+                        <th>Fase 1 </br> Alerta máximo</th>
+                        <th>Fase 2 </br> Controle</th>
+                        <th>Fase 3 </br> Flexibilização</th>
+                        <th class="canto_superior_direito">Fase 4 </br> Abertura parcial</th>
+                    </tr>
+                    <tr>
+                        <td
+                        rowspan="2" style="border-right: solid 1px; font-size: 1.2em" class="tabela-fundo-branco">Capacidade do Sistema de Saúde</td>
+                        <td class="tabela-fundo-branco">Taxa de ocupação de leitos </br> UTI COVID</td>
+                        <td class="criterio1">Acima de </br> 80%</td>
+                        <td class="criterio2"> 70 - 80%</td>
+                        <td class="criterio3"> 60 - 70%</td>
+                        <td class="criterio4">Abaixo de </br> 60%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="leitoss">Leitos de UTI COVID 100K</br> habitantes </td>
+                        <td class="criterio1">Abaixo de </br> 3,0</td>
+                        <td class="criterio2"> 3,0 - 5,0</td>
+                        <td class="criterio3">Acima de </br> 5,0</td>
+                        <td class="criterio4">Acima de </br> 5,0</td>
+                    </tr>
+
+                    <tr class="borda_divisoria">
+                        <td class="canto_inferior_esquerdo" rowspan="3" style="border-right: solid 1px; font-size: 1.2em">Evolução <br> da <br> epidemia</td>
+                        <td class="tabela-dark"> Novos casos últimos</br> 7 dias/ novos casos <br> 7 dias anteriores</td>
+                        <td class="criterio1">Acima de </br> 2,0</td>
+                        <td class="criterio2"> 1,0 - 2,0</td>
+                        <td class="criterio3"> 1,0 - 2,0</td>
+                        <td class="criterio4">Abaixo de </br> 1,0</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tabela-dark"> Novas internações últimos </br>7 dias/ novas internações <br> 7 dias anteriores</td>
+                        <td class="criterio1">Acima de </br> 1,5</td>
+                        <td class="criterio2"> 1,0 - 1,5</td>
+                        <td class="criterio3"> 0,5 - 1,0</td>
+                        <td class="criterio4">Abaixo de </br> 0,5</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tabela-dark"> óbitos por COVID </br> nos últimos 7 dias/</br> novas internações 7 dias <br>anteriores
+                        </td>
+                        <td class="criterio1">Acima de </br> 2,0</td>
+                        <td class="criterio2"> 1,0 - 2,0</td>
+                        <td class="criterio3"> 0,5 - 1,0</td>
+                        <td class="canto_inferior_direito, criterio4">Abaixo de </br> 0,5</td>
+                    </tr>
+
+                </table>
+            </section>
+
+        </section>
+        
+        <!--Section 4: Gráfico-->
+
+        <section id="section_grafico">
+
+            <img src="./images/essa luta é coletiva2.jpg" alt="Grafico">
+
+        </section>
+
+
+        <!--Section 5: Retorna abertura de setores-->
+
+        <section class="fase_setores">
+
+            <h3>Setores</h3>
+            <h4>Confira quais setores vão abrir de acordo com a fase que se encontra sua cidade.</h4>
+
+            <section id="tabela_setores">
+
+                <table>
+                    <tr>
+                        <th class="canto_superior_esquerdo">Setores Temáticos</th>
+                        <th class="fase1">Fase 1</th>
+                        <th class="fase2">Fase 2</th>
+                        <th class="fase3">Fase 3</th>
+                        <th class="fase4">Fase 4</th>
+                        <th class="fase5 canto_superior_direito">Fase 5</th>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/park.png" alt="espaços públicos"></td>
+                        <td class="fase1">&#10007;</td>
+                        <td class="fase2">&#10007;</td>
+                        <td class="fase3">&#10007;</td>
+                        <td class="fase4">&#10007;</td>
+                        <td class="fase5">&#128504;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/key.png" alt="atividades imobiliárias"></td>
+                        <td class="fase1">&#10007;</td>
+                        <td class="fase2">abre com restrições</td>
+                        <td class="fase3">&#128504;</td>
+                        <td class="fase4">&#128504;</td>
+                        <td class="fase5">&#128504;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/sedan.png" alt="consecionárias"></td>
+                        <td class="fase1">&#10007;</td>
+                        <td class="fase2">abre com restrições</td>
+                        <td class="fase3">&#128504;</td>
+                        <td class="fase4">&#128504;</td>
+                        <td class="fase5">&#128504;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/escritorio.png" alt="escritórios"></td>
+                        <td class="fase1">&#10007;</td>
+                        <td class="fase2">abre com restrições</td>
+                        <td class="fase3">&#128504;</td>
+                        <td class="fase4">&#128504;</td>
+                        <td class="fase5">&#128504;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/fork.png" alt="Bares e restaurantes"></td>
+                        <td class="fase1">&#10007;</td>
+                        <td class="fase2">&#10007;</td>
+                        <td class="fase3">abre com restrições</td>
+                        <td class="fase4">abre com restrições</td>
+                        <td class="fase5">&#128504;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/online-shop.png" alt="Comércio"></td>
+                        <td class="fase1">&#10007;</td>
+                        <td class="fase2">abre com restrições</td>
+                        <td class="fase3">abre com restrições</td>
+                        <td class="fase4">abre com restrições</td>
+                        <td class="fase5">&#128504;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/shopping-bag.png" alt="Shopping center"></td>
+                        <td class="fase1">&#10007;</td>
+                        <td class="fase2">abre com restrições</td>
+                        <td class="fase3">abre com restrições</td>
+                        <td class="fase4">abre com restrições</td>
+                        <td class="fase5">&#128504;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/hair-comb.png" alt="Salão de beleza"></td>
+                        <td class="fase1">&#10007;</td>
+                        <td class="fase2">&#10007;</td>
+                        <td class="fase3">abre com restrições</td>
+                        <td class="fase4">abre com restrições</td>
+                        <td class="fase5">&#128504;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/dumbbell.png" alt="Academia"></td>
+                        <td class="fase1">&#10007;</td>
+                        <td class="fase2">&#10007;</td>
+                        <td class="fase3">&#10007;</td>
+                        <td class="fase4">abre com restrições</td>
+                        <td class="fase5">&#128504;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/evento.png" alt="Teatro, cinemas"></td>
+                        <td class="fase1">&#10007;</td>
+                        <td class="fase2">&#10007;</td>
+                        <td class="fase3">&#10007;</td>
+                        <td class="fase4">&#10007;</td>
+                        <td class="fase5">&#128504;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/promocao.png" alt="Grandes eventos"></td>
+                        <td class="fase1">&#10007;</td>
+                        <td class="fase2">&#10007;</td>
+                        <td class="fase3">&#10007;</td>
+                        <td class="fase4">&#10007;</td>
+                        <td class="fase5">&#128504;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/educacao.png" alt="Educação"></td>
+                        <td class="canto_inferior_direito" rowspan="2" colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="./images/transporte.png" alt="Transporte"></td>
+                    </tr>
+                </table>
+
+            </section>
+
+        </section>
+
+        <!--Section 4: Gráfico-->
+
+        <section class="section_grafico">
+
+            <h2 class="grafico-h2">O covid vai passar mas para isso precisamos que você faça sua parte. #FicaEmCasa</h2>
+
+            <img src="./images/People on balconies or windows during Coronavirus-pana.png" alt="Grafico">
+
+        </section>
+        <span id="scroll-top-btn"><img src="./images/up-arrow.png" alt=""></span>
+
+        <div class="datetime">
+            <div class="date">
+                <span id="dayname">Day</span>,
+                <span id="month">Month</span>
+                <span id="daynum">00</span>,
+                <span id="year">Year</span>
+            </div>
+            <div class="time">
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+    
+        </div>
+    </main>
+
+
+    <footer>
+        <section>
+            <h2>Nos acompanhe nas redes sociais</h2>
+        </section>
+        <section id="social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+
+        </section>
+        <section id="desenvolvimento">
+            <p>Desenvolvimento: Alessandra Murat, Amanda Nascimento, Diana Muller, João Valdevino, Márcia Alves e Rafael
+                Pontes</p>
+        </section>
+
+    </footer>
+    <script src="./js/atualizacao.js"></script>
+    <script src="js/tam_letra_acessib.js"></script>
+    <script src="js/date_clock.js"></script>
+  
+
+</body>
+
+</html>

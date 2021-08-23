@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/quemsomos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/geral.css">
+  <link rel="stylesheet" href="css/date_time.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <title>Quem Somos</title>
+
+
+</head>
+
+<body onload="initClock()">
+  <header id="header">
+    <a href="index.html"><img id="logo" src="images/svg.2.png" alt=""></a>
+    <nav id="nav">
+      <button id="btn-mobile">Menu
+        <span id="hamburguer"></span>
+      </button>
+      <ul id="menu">
+        <li><a href="index.html">INÍCIO</a></li>
+        <li><a href="quem-somos.html">QUEM SOMOS</a></li>
+        <li><a href="formulario.html">FORMULÁRIO</a></li>
+        <li><a href="atualizacao.html">ATUALIZAÇÃO</a></li>
+      </ul>
+  </header>
+
+  <main class="paginaQuemSomos">
+
+    <div id="aumenta_letra">
+      <input type="button" class="botaoFonte" value="A+" id="btn-acessibilidade-aumenta"
+        onclick="acessibilidadeAumenta()">
+      <input type="button" class="botaoFonte" value="A-" id="btn-acessibilidade-diminui"
+        onclick="acessibilidadeDiminui()">
+    </div>
+    <button id="btn-dark-mode">ON/OFF</button>
+    <section class="boxqs">
+      <h1 id="tituloQuemsomos">
+        Prefeitura Municipal de Silicon Valley
+      </h1>
+      <section id="quem-somos">
+        <section id="textPrincipal">
+          <p>
+            Ambientada no Vale do Silício, região da Califórnia fértil em inovações tecnológicas e científicas, a série
+            mostra um grupo de desenvolvedores que cria novo um programa com o objetivo de impressionar um bilionário
+            excêntrico do ramo tecnológico.
+          </p>
+          <p>
+            O Vale do Silício (em inglês: Silicon Valley), na Califórnia, Estados Unidos, é um apelido da região da baía
+            de São Francisco onde estão situadas várias empresas de alta tecnologia, destacando-se na produção de
+            circuitos eletrônicos, na eletrônica e informática. O vale abrange várias cidades do estado da Califórnia,
+            como Palo Alto, São Francisco e Santa Clara, estendendo-se até os subúrbios de São José.</p>
+          <p>
+            A palavra "silício" vem das empresas de pesquisa e manufatura de circuitos integrados de silício, como a
+            Fairchild Semiconductor e a Intel, mas hoje a região é sede para várias empresas de alta tecnologia, muitas
+            incluídas no na Lista 500 da Fortune, além de empresas Startup.
+          </p>
+          <p>
+            Fora dos Estados Unidos, destaca-se em Israel o Silicon Wadi, a segunda maior aglomeração de indústrias de
+            tecnologia de ponta, atrás apenas do Vale do Silício da Califórnia.
+          </p>
+
+
+        </section>
+        <section id="img-quemSomos">
+          <img src="images/img-quemSomos.jpg" alt="Imagem de Silicon Valley">
+        </section>
+      </section>
+
+    </section>
+
+    <section class="desenvolvimento">
+      <h2>Nossos Desenvolvedores</h2>
+      <section id="desenvolvedores">
+        <section class="dev">
+
+          <section class="card-dev">
+            <img class="img-dev" src="images/perfilAlessandra.png" alt="Desenvolvedora Alessandra Murat">
+            <span id="dev1"><a href="https://www.linkedin.com/in/alessandramurat/" target="_blank"><img
+                  src="images/linkedin.png" alt="Logo do LinkedIn"></a><a href="https://github.com/AlessandraMurat"
+                target="_blank"><img src="images/github.png" alt="Logo do GitHub"></a></span>
+          </section>
+          <div>
+            <h3 id="alessandra">Alessandra Murat</h3>
+            <h4>Desenvolvedora Full-Stack</h4>
+            <p>Fullstack web developer em formação pela SoulCode. Onde desenvolve habilidades na programação usando
+              HTML, CSS e a linguagem JavaScript. Formada em Tecnologia em Projetos Mecânicos. Atualmente está cursando
+              bacharel em Ciências da Computação.</p>
+          </div>
+
+
+        </section>
+
+        <section class="dev">
+
+          <section class="card-dev">
+            <img class="img-dev" src="images/perfilAmanda.png" alt="Desenvolvedora Amanda Nascimento">
+            <span id="dev2"><a href="https://www.linkedin.com/in/amandajpnascimento/" target="_blank"><img
+                  src="images/linkedin.png" alt="Logo do LinkedIn"></a><a href="https://github.com/AmandaJhes"
+                target="_blank"><img src="images/github.png" alt="Logo do GitHub"></a></span>
+          </section>
+
+          <h3 id="amanda">Amanda Nascimento</h3>
+          <h4>Desenvolvedora Full-Stack</h4>
+          <p>Estudante Web Full Stack na SoulCode Academy e de Engenharia de Telecomunicações no 5º semestre, apaixonada
+            por tecnologia tendo como objetivo ingressar na área de Desenvolvimento. </p>
+        </section>
+
+        <section class="dev">
+
+          <section class="card-dev">
+            <img class="img-dev" src="images/perfilDiana.png" alt="Desenvolvedora Diana Müller">
+            <span id="dev3"><a href="https://www.linkedin.com/in/muller-diana/" target="_blank"><img
+                  src="images/linkedin.png" alt="Logo do LinkedIn"></a><a href="https://github.com/mullerdiana"
+                target="_blank"><img src="images/github.png" alt="Logo do GitHub"></a></span>
+          </section>
+
+          <h3 id="diana">Diana Müller</h3>
+          <h4>Desenvolvedora Full-Stack</h4>
+          <p>
+            É estudante Web Full-Stack pela SoulCode Academy após 6 anos trabalhando com pesquisa na área de genética
+            psiquiátrica. Tem se interessado por ambos polos da carreira Full-Stack. Foi uma das fundadoras da ONG <a
+              class="principio_animal" href="https://www.principioanimal.org/">Princípio Animal.</a>
+        </section>
+
+        <section class="dev">
+          <section class="card-dev">
+            <img class="img-dev" src="images/perfilJoao.png" alt="Desenvolvedor João Valdevino">
+            <span id="dev4"><a href="http://www.linkedin.com/in/joão-valdevino/" target="_blank"><img
+                  src="images/linkedin.png" alt="Logo do LinkedIn"></a><a href="https://github.com/joao-ads"
+                target="_blank"><img src="images/github.png" alt="Logo do GitHub"></a></span>
+          </section>
+
+          <h3 id="joao">João Valdevino</h3>
+          <h4>Desenvolvedor Full-Stack</h4>
+          <p>
+            Estudante Full Stack Developer na SoulCode Academy e do 2º semestre de Análise e Desenvolvimento de Sistemas
+            na Universidade Cruzeiro do Sul.
+          </p>
+        </section>
+
+        <section class="dev">
+          <section class="card-dev">
+            <img class="img-dev" src="images/perfilMarcia.png" alt="Desenvolvedora Márcia Alves">
+            <span id="dev5"><a href="https://www.linkedin.com/in/marciaoalves/" target="_blank"><img
+                  src="images/linkedin.png" alt="Logo do LinkedIn"></a><a href="https://github.com/marciasoalves"
+                target="_blank"><img src="images/github.png" alt="Logo do GitHub"></a></span>
+          </section>
+
+          <h3 id="marcia">Márcia Alves</h3>
+          <h4>Desenvolvedora Full-Stack</h4>
+          <p>
+            Fullstack web developer em formação pela SoulCode Academy. Onde desenvolve habilidades na programação usando
+            HTML, CSS e a liguagem JavaScript. Com especialização em Comunicação Empresarial e Graduação em Comunicação
+            social. Busca destaque e crescimento na tecnologia.
+          </p>
+        </section>
+
+        <section class="dev">
+          <section class="card-dev">
+            <img class="img-dev" src="images/perfilRafael.png" alt="Desenvolvedor Rafael Pontes">
+            <span id="dev6"><a href="#" target="_blank"><img src="images/linkedin.png" alt="Logo do LinkedIn"></a><a
+                href="#" target="_blank"><img src="images/github.png" alt="Logo do GitHub"></a></span>
+          </section>
+
+          <h3 id="rafael">Rafael Pontes</h3>
+          <h4>Desenvolvedor Full-Stack</h4>
+          <p>
+            Estudante Full Stack Developer na SoulCode Academy e do 4º semestre de Análise e Desenvolvimento de Sistemas
+            na Universidade São Francisco.
+          </p>
+        </section>
+      </section>
+
+    </section>
+
+    <span id="scroll-top-btn"><img src="images/up-arrow.png" alt=""></span>
+ 
+
+  </main>
+
+  
+
+
+
+  <footer>
+    <section>
+      <h2>Nos acompanhe nas redes sociais</h2>
+    </section>
+    <section id="social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+
+    </section>
+    <section id="desenvolvimento">
+      <p>© Prefeitura Silicon Valley - 2021. Todos os direitos reservados</p>
+    </section>
+  </footer>
+  <script src="js/tam_letra_acessib.js"></script>
+  <script src="js/quem-somos.js"></script>
+  <script>
+    const btnMobile = document.getElementById("btn-mobile");
+
+    function toggleMenu() {
+      const nav = document.getElementById("nav");
+      nav.classList.toggle("active");
+    }
+
+    btnMobile.addEventListener("click", toggleMenu);
+
+</script>
+</body>
+
+</html>
